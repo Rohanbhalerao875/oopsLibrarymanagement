@@ -1,0 +1,70 @@
+# create a library class
+# display book
+# lend book- (who owns the book if not present)
+# add book
+# return book
+# Rohanlibrary = library(listofbooks,library_name)
+
+# dictionary(books-nameofperson)
+# create a main function and run an infinite while loop asking
+# user for input
+from typing import Mapping
+
+
+class library:
+    def __init__(self,list,name):
+
+        self.booklist = list
+        self.name= name
+        self.lendict = {}
+
+    def displaybooks(self):
+        print(f'we have the following books in our library: {self.name}')
+        for item in self.booklist:
+            print(item)
+    def lendbook(self,user,book):
+        if book not in self.lendict.keys():
+            self.lendict.update({book:user})
+            print("lender-book database has been updated. You can take the book now")
+        else:
+            print(f"book is already being used by {self.lendict[book]}")
+    def addbook(slef,book):
+        self.booklist.append(book)
+        print("book has been added to the book list")
+    def returnbook(self,book):
+        self.lendict.pop(book)
+        
+
+if __name__ == "__main__":
+    Rohan = library(['Python','Rich Dad and Poor Dad','Naruto','C++ basics','Batman'],"Rohan Library")
+    
+        while (True):
+            print(f'welcome to the {Rohan.name} library . Enter your choice to continue')
+            user_choice = int(input())
+            if user_choice==1:
+                Rohan.displaybooks()
+            elif user_choice==2:
+                book = input("Enter the name of the book you want to lend")
+                name= input("Enter your name ")
+                Rohan.lendbook(user,book)
+            elif user_choice==3:
+                book = input("Enter the name of the book you want to add")
+                Rohan.addbook(book)
+
+
+            elif user_choice==4:
+                book = input("Enter the name of the book you want to add")
+                Rohan.returnbook
+            else:
+                'not a valid option'
+            
+
+
+            print("Press q to quit and c to continue")
+            
+            while (user_choice2!='c' and user_choice2!='q'):
+                user_choice2= input()
+                if user_choice2=="q":
+                exit
+                if user_choice2=="c":
+                continue
